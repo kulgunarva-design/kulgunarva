@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HÜ Kulgu paadigaraazid — Товарищество лодочных гаражей</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#"><i class="fas fa-phone"></i> +372 5555 1234</a>
+                <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ru">РУ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="et">ET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⛵</div>
+                <div class="logo-text">Kulgu<span> paadigaraazid</span></div>
+            </a>
+            <nav>
+                <a href="index.html" class="active" data-key="nav_home">Главная</a>
+                <a href="about.html" data-key="nav_about">О нас</a>
+                <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                <a href="projects.html" data-key="nav_projects">Проекты</a>
+                <a href="members.html" data-key="nav_members">Членам</a>
+                <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><i class="fas fa-water"></i> <span data-key="hero_title">Товарищество лодочных гаражей</span></h1>
+                <p data-key="hero_desc">Уютная гавань для вашего судна. Объединяем владельцев лодок, рыбаков и всех, кто любит воду.</p>
+                <a href="about.html" class="btn" data-key="hero_btn">Присоединиться</a>
+            </div>
+            <div class="hero-image">⛵</div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="wave-section">
+        <div class="container">
+            <div class="features">
+                <div class="feature-card">
+                    <span class="icon"><i class="fas fa-ship"></i></span>
+                    <h3 data-key="feat_garages">Лодочные гаражи</h3>
+                    <p data-key="feat_garages_desc">Безопасное хранение для вашей лодки, мотора и снаряжения круглый год.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon"><i class="fas fa-fish"></i></span>
+                    <h3 data-key="feat_fishing">Рыболовный клуб</h3>
+                    <p data-key="feat_fishing_desc">Соревнования, выезды на природу и обмен опытом с единомышленниками.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon"><i class="fas fa-users"></i></span>
+                    <h3 data-key="feat_community">Сообщество</h3>
+                    <p data-key="feat_community_desc">Дружеская атмосфера, взаимопомощь и общие мероприятия для всех членов.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
+                    <h3 data-key="feat_location">Удобное расположение</h3>
+                    <p data-key="feat_location_desc">Близость к воде, лодочным спускам и живописным местам для отдыха.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPLIT SECTION: О НАС ===== -->
+    <section>
+        <div class="container split-section">
+            <div class="split-image">
+                <div class="big-icon">⛵</div>
+                <h3 style="color:#fff; margin-top:12px;" data-key="split_title">История товарищества</h3>
+                <p style="color:#B0D4E0;" data-key="split_desc">Основано в 2010 году группой энтузиастов. Сегодня — более 50 членов и 40 лодочных мест.</p>
+            </div>
+            <div class="split-text">
+                <h2><i class="fas fa-info-circle"></i> <span data-key="split_about_title">О нас</span></h2>
+                <p data-key="split_about_text">Мы создаём комфортные условия для хранения лодок и общения людей, увлечённых водным отдыхом. Наша цель — развивать культуру ответственного отношения к воде и природе.</p>
+                <a href="about.html" class="btn" data-key="split_about_btn">Подробнее →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPLIT SECTION: РЫБОЛОВНЫЙ КЛУБ (reverse) ===== -->
+    <section style="background:#EBF5FB;">
+        <div class="container split-section reverse">
+            <div class="split-image" style="background:linear-gradient(135deg, #1A6A8A, #0A2E4A);">
+                <div class="big-icon">🎣</div>
+                <h3 style="color:#fff; margin-top:12px;" data-key="split_fishing_title">Рыболовный клуб</h3>
+                <p style="color:#B0D4E0;" data-key="split_fishing_desc">Соревнования, мастер-классы и совместные выезды на рыбалку.</p>
+            </div>
+            <div class="split-text">
+                <h2><i class="fas fa-fish"></i> <span data-key="split_fishing_about">Рыболовный клуб</span></h2>
+                <p data-key="split_fishing_text">Объединяем опытных рыболовов и новичков. Регулярно проводим соревнования, выезды на природу и обучающие семинары по рыбной ловле и сохранению водных ресурсов.</p>
+                <a href="fishing-club.html" class="btn" data-key="split_fishing_btn">Присоединиться →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY PREVIEW ===== -->
+    <section style="padding-bottom: 60px;">
+        <div class="container" style="text-align:center;">
+            <h2 style="font-size:32px; color:#0A2E4A; margin-bottom:8px;"><i class="fas fa-images" style="color:#38B2AC;"></i> <span data-key="gallery_preview_title">Наши моменты</span></h2>
+            <p style="color:#5A6A7A; margin-bottom:20px;" data-key="gallery_preview_desc">Взгляд на жизнь нашего товарищества</p>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 700px; margin: 0 auto 28px;">
+                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
+                    <img src="img/1.jpg" alt="Фото 1" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
+                    <img src="img/2.jpg" alt="Фото 2" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
+                    <img src="img/3.jpg" alt="Фото 3" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
+                    <img src="img/4.jpg" alt="Фото 4" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+            </div>
+            <a href="gallery.html" class="btn" data-key="gallery_preview_btn">Смотреть галерею →</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>HÜ Kulgupaadigaraazid</h4>
+                    <p style="font-size:14px; color:#A0C4D8;">Место для тех, кто любит воду и лодки.</p>
+                </div>
+                <div>
+                    <h4 data-key="footer_nav">Навигация</h4>
+                    <a href="index.html" data-key="nav_home">Главная</a>
+                    <a href="about.html" data-key="nav_about">О нас</a>
+                    <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                    <a href="projects.html" data-key="nav_projects">Проекты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_association">Рыболовный клуб</h4>
+                    <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_contact">Контакты</h4>
+                    <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                    <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-pin"></i> Kulgusadama tee 3, Narva, Estonia</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 HÜ Kulgupaadigaraazid — <span data-key="footer_tagline">место для тех, кто любит воду</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ПЛАВАЮЩАЯ КНОПКА ===== -->
+    <a href="report.html" class="floating-report-btn">
+        <i class="fas fa-bullhorn"></i>
+        <span data-key="report_btn">Сообщить о проблеме</span>
+    </a>
+
+    <script>
+        // ===== МУЛЬТИЯЗЫЧНОСТЬ =====
+        const translations = {
+            ru: {
+                nav_home: 'Главная',
+                nav_about: 'О нас',
+                nav_gallery: 'Галерея',
+                nav_projects: 'Проекты',
+                nav_members: 'Членам',
+                nav_fishing: 'Рыболовный клуб',
+                nav_contacts: 'Контакты',
+                hero_title: 'Товарищество лодочных гаражей',
+                hero_desc: 'Уютная гавань для вашего судна. Объединяем владельцев лодок, рыбаков и всех, кто любит воду.',
+                hero_btn: 'Присоединиться',
+                feat_garages: 'Лодочные гаражи',
+                feat_garages_desc: 'Безопасное хранение для вашей лодки, мотора и снаряжения круглый год.',
+                feat_fishing: 'Рыболовный клуб',
+                feat_fishing_desc: 'Соревнования, выезды на природу и обмен опытом с единомышленниками.',
+                feat_community: 'Сообщество',
+                feat_community_desc: 'Дружеская атмосфера, взаимопомощь и общие мероприятия для всех членов.',
+                feat_location: 'Удобное расположение',
+                feat_location_desc: 'Близость к воде, лодочным спускам и живописным местам для отдыха.',
+                split_title: 'История товарищества',
+                split_desc: 'Основано в 2010 году группой энтузиастов. Сегодня — более 50 членов и 40 лодочных мест.',
+                split_about_title: 'О нас',
+                split_about_text: 'Мы создаём комфортные условия для хранения лодок и общения людей, увлечённых водным отдыхом. Наша цель — развивать культуру ответственного отношения к воде и природе.',
+                split_about_btn: 'Подробнее →',
+                split_fishing_title: 'Рыболовный клуб',
+                split_fishing_desc: 'Соревнования, мастер-классы и совместные выезды на рыбалку.',
+                split_fishing_about: 'Рыболовный клуб',
+                split_fishing_text: 'Объединяем опытных рыболовов и новичков. Регулярно проводим соревнования, выезды на природу и обучающие семинары по рыбной ловле и сохранению водных ресурсов.',
+                split_fishing_btn: 'Присоединиться →',
+                gallery_preview_title: 'Наши моменты',
+                gallery_preview_desc: 'Взгляд на жизнь нашего товарищества',
+                gallery_preview_btn: 'Смотреть галерею →',
+                footer_nav: 'Навигация',
+                footer_association: 'Рыболовный клуб',
+                footer_contact: 'Контакты',
+                footer_tagline: 'место для тех, кто любит воду',
+                report_btn: 'Сообщить о проблеме'
+            },
+            en: {
+                nav_home: 'Home',
+                nav_about: 'About',
+                nav_gallery: 'Gallery',
+                nav_projects: 'Projects',
+                nav_members: 'For Members',
+                nav_fishing: 'Fishing Club',
+                nav_contacts: 'Contacts',
+                hero_title: 'Boat Garage Association',
+                hero_desc: 'A cozy harbor for your boat. Uniting boat owners, fishermen and everyone who loves the water.',
+                hero_btn: 'Join',
+                feat_garages: 'Boat Garages',
+                feat_garages_desc: 'Safe storage for your boat, engine and equipment all year round.',
+                feat_fishing: 'Fishing Club',
+                feat_fishing_desc: 'Competitions, trips to nature and exchange of experience with like-minded people.',
+                feat_community: 'Community',
+                feat_community_desc: 'Friendly atmosphere, mutual assistance and joint events for all members.',
+                feat_location: 'Convenient Location',
+                feat_location_desc: 'Proximity to water, boat launches and picturesque spots for recreation.',
+                split_title: 'History of the Association',
+                split_desc: 'Founded in 2010 by a group of enthusiasts. Today — more than 50 members and 40 boat places.',
+                split_about_title: 'About Us',
+                split_about_text: 'We create comfortable conditions for storing boats and communication of people passionate about water recreation. Our goal is to develop a culture of responsible attitude to water and nature.',
+                split_about_btn: 'Read more →',
+                split_fishing_title: 'Fishing Club',
+                split_fishing_desc: 'Competitions, master classes and joint fishing trips.',
+                split_fishing_about: 'Fishing Club',
+                split_fishing_text: 'Uniting experienced fishermen and beginners. We regularly hold competitions, trips to nature and training seminars on fishing and conservation of water resources.',
+                split_fishing_btn: 'Join →',
+                gallery_preview_title: 'Our Moments',
+                gallery_preview_desc: 'A look at the life of our association',
+                gallery_preview_btn: 'View gallery →',
+                footer_nav: 'Navigation',
+                footer_association: 'Fishing Club',
+                footer_contact: 'Contacts',
+                footer_tagline: 'a place for those who love water',
+                report_btn: 'Report a problem'
+            },
+            et: {
+                nav_home: 'Avaleht',
+                nav_about: 'Meist',
+                nav_gallery: 'Galerii',
+                nav_projects: 'Projektid',
+                nav_members: 'Liikmetele',
+                nav_fishing: 'Kalastusklubi',
+                nav_contacts: 'Kontaktid',
+                hero_title: 'Kulgupaadigaraazide ühistu',
+                hero_desc: 'Hubane sadam teie paadile. Ühendame paadiomanikke, kalastajaid ja kõiki, kes armastavad vett.',
+                hero_btn: 'Liitu',
+                feat_garages: 'Paadigaraažid',
+                feat_garages_desc: 'Turvaline hoiukoht teie paadile, mootorile ja varustusele aastaringselt.',
+                feat_fishing: 'Kalastusklubi',
+                feat_fishing_desc: 'Võistlused, loodusretked ja kogemuste vahetus mõttekaaslastega.',
+                feat_community: 'Kogukond',
+                feat_community_desc: 'Sõbralik õhkkond, vastastikune abi ja ühised üritused kõigile liikmetele.',
+                feat_location: 'Mugav asukoht',
+                feat_location_desc: 'Lähedus veele, paadisildadele ja maalilistele puhkepaikadele.',
+                split_title: 'Ühistu ajalugu',
+                split_desc: 'Asutatud 2010. aastal entusiastide grupi poolt. Täna — üle 50 liikme ja 40 paadikohta.',
+                split_about_title: 'Meist',
+                split_about_text: 'Loome mugavaid tingimusi paatide hoidmiseks ja veespordist huvitatud inimeste suhtlemiseks. Meie eesmärk on arendada vastutustundlikku suhtumist vette ja loodusesse.',
+                split_about_btn: 'Loe edasi →',
+                split_fishing_title: 'Kalastusklubi',
+                split_fishing_desc: 'Võistlused, meistriklassid ja ühised kalareisid.',
+                split_fishing_about: 'Kalastusklubi',
+                split_fishing_text: 'Ühendame kogenud kalastajaid ja algajaid. Korraldame regulaarselt võistlusi, loodusretki ja koolitusseminare kalapüügi ja veekogude kaitse teemadel.',
+                split_fishing_btn: 'Liitu →',
+                gallery_preview_title: 'Meie hetked',
+                gallery_preview_desc: 'Pilguheit meie ühistu ellu',
+                gallery_preview_btn: 'Vaata galeriid →',
+                footer_nav: 'Navigatsioon',
+                footer_association: 'Kalastusklubi',
+                footer_contact: 'Kontaktid',
+                footer_tagline: 'koht neile, kes armastavad vett',
+                report_btn: 'Teata probleemist'
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru');
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.getAttribute('data-lang'));
+            });
+        });
+    </script>
+</body>
+</html>

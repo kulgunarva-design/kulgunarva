@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты — HÜ Kulgu paadigaraazid</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#"><i class="fas fa-phone"></i> +372 5555 1234</a>
+                <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ru">РУ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="et">ET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⛵</div>
+                <div class="logo-text">Kulgu<span> paadigaraazid</span></div>
+            </a>
+            <nav>
+                <a href="index.html" data-key="nav_home">Главная</a>
+                <a href="about.html" data-key="nav_about">О нас</a>
+                <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                <a href="projects.html" data-key="nav_projects">Проекты</a>
+                <a href="members.html" data-key="nav_members">Членам</a>
+                <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                <a href="contacts.html" class="active" data-key="nav_contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== CONTACTS ===== -->
+    <section class="contacts-header">
+        <div class="container">
+            <h1><i class="fas fa-address-card"></i> <span data-key="contacts_title">Контакты</span></h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="contacts-grid">
+
+                <!-- ===== 1. ОБЩИЕ КОНТАКТЫ ===== -->
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone-alt"></i> <span data-key="contacts_general_title">Общие контакты</span></h3>
+                    <div class="item">
+                        <i class="fas fa-user"></i>
+                        <span data-key="contacts_association_web">Организатор: Александр Майоров</span>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+37255606683">+372 5560 6683</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:kulgunarva@gmail.com">kulgunarva@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- ===== 2. HÜ KULGU PAADIGARAAZID ===== -->
+                <div class="contact-card">
+                    <h3><i class="fas fa-ship"></i> <span data-key="contacts_association_title">HÜ Kulgu paadigaraazid</span></h3>
+                    <div class="item">
+                        <i class="fas fa-user"></i>
+                        <span data-key="contacts_association_head">Председатель: Сергей Русаков</span>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+37253002121">+372 5300 2121</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:kulgunarva@rambler.ru">kulgunarva@rambler.ru</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="contacts_association_hours">Приём: понедельник, среда: 17:00 – 19:00</span>
+                    </div>
+                    <div class="note" data-key="contacts_association_note">* По вопросам членства и общим вопросам</div>
+                </div>
+
+                <!-- ===== 3. БУХГАЛТЕР ===== -->
+                <div class="contact-card">
+                    <h3><i class="fas fa-calculator"></i> <span data-key="contacts_accountant_title">Бухгалтер</span></h3>
+                    <div class="item">
+                        <i class="fas fa-user"></i>
+                        <span data-key="contacts_accountant_name">Тамара Кузьмина</span>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+37256040290">+372 5604 0290</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="contacts_accountant_hours">Вторник, Четверг: 10:00 – 14:00</span>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-map-pin"></i>
+                        <span data-key="contacts_accountant_address">ул. Бухгалтерская, 5, каб. 12, Нарва</span>
+                    </div>
+                    <div class="note" data-key="contacts_accountant_note">* Приём по предварительной записи</div>
+                </div>
+
+                <!-- ===== 4. РЫБОЛОВНЫЙ КЛУБ ===== -->
+                <div class="contact-card">
+                    <h3><i class="fas fa-fish"></i> <span data-key="contacts_fishing_title">Рыболовный клуб</span></h3>
+                    <div class="item">
+                        <i class="fas fa-user"></i>
+                        <span data-key="contacts_fishing_head">Руководитель: Сидоров Сергей Иванович</span>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+37255553456">+372 5555 3456</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:fishing@kulgupaadigaraazid.ee">fishing@kulgupaadigaraazid.ee</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="contacts_fishing_hours">Встречи: каждое воскресенье, 10:00 – 12:00</span>
+                    </div>
+                    <div class="note" data-key="contacts_fishing_note">* Присоединиться может любой член товарищества</div>
+                </div>
+
+                <!-- ===== 5. ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ (полная ширина) ===== -->
+                <div class="contact-card full-width">
+                    <h3><i class="fas fa-info-circle"></i> <span data-key="contacts_additional_title">Дополнительная информация</span></h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 30px;">
+                        <div class="item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-key="contacts_additional_meeting">Общее собрание: каждая среда, 18:00</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-key="contacts_additional_next">Следующее собрание: 15 декабря 2026</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-file-invoice"></i>
+                            <span data-key="contacts_additional_docs">Документы: доступны в разделе "Членам"</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-key"></i>
+                            <span data-key="contacts_additional_keys">Ключи: выдаются после оплаты членского взноса</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>HÜ Kulgupaadigaraazid</h4>
+                    <p style="font-size:14px; color:#A0C4D8;">Место для тех, кто любит воду и лодки.</p>
+                </div>
+                <div>
+                    <h4 data-key="footer_nav">Навигация</h4>
+                    <a href="index.html" data-key="nav_home">Главная</a>
+                    <a href="about.html" data-key="nav_about">О нас</a>
+                    <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                    <a href="projects.html" data-key="nav_projects">Проекты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_association">Товарищество</h4>
+                    <a href="members.html" data-key="nav_members">Членам</a>
+                    <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                    <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_contact">Контакты</h4>
+                    <a href="#"><i class="fas fa-phone"></i> +372 5555 1234</a>
+                    <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-pin"></i> Narva, Estonia</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 HÜ Kulgu paadigaraazid — <span data-key="footer_tagline">место для тех, кто любит воду</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ПЛАВАЮЩАЯ КНОПКА ===== -->
+    <a href="report.html" class="floating-report-btn">
+        <i class="fas fa-bullhorn"></i>
+        <span data-key="report_btn">Сообщить о проблеме</span>
+    </a>
+
+    <script>
+        const translations = {
+            ru: {
+                nav_home: 'Главная',
+                nav_about: 'О нас',
+                nav_gallery: 'Галерея',
+                nav_projects: 'Проекты',
+                nav_members: 'Членам',
+                nav_fishing: 'Рыболовный клуб',
+                nav_contacts: 'Контакты',
+                contacts_title: 'Контакты',
+                contacts_general_title: 'Общие контакты',
+                contacts_association_web: 'Организатор: Александр Майоров',
+                contacts_association_title: 'HÜ Kulgu paadigaraazid',
+                contacts_association_head: 'Председатель: Сергей Русаков',
+                contacts_association_hours: 'Приём: понедельник, среда: 17:00 – 19:00',
+                contacts_association_note: '* По вопросам членства и общим вопросам',
+                contacts_accountant_title: 'Бухгалтер',
+                contacts_accountant_name: 'Тамара Кузьмина',
+                contacts_accountant_hours: 'Вторник, Четверг: 10:00 – 14:00',
+                contacts_accountant_address: 'ул. Бухгалтерская, 5, каб. 12, Нарва',
+                contacts_accountant_note: '* Приём по предварительной записи',
+                contacts_fishing_title: 'Рыболовный клуб',
+                contacts_fishing_head: 'Руководитель: Сидоров Сергей Иванович',
+                contacts_fishing_hours: 'Встречи: каждое воскресенье, 10:00 – 12:00',
+                contacts_fishing_note: '* Присоединиться может любой член товарищества',
+                contacts_additional_title: 'Дополнительная информация',
+                contacts_additional_meeting: 'Общее собрание: каждая среда, 18:00',
+                contacts_additional_next: 'Следующее собрание: 15 декабря 2026',
+                contacts_additional_docs: 'Документы: доступны в разделе "Членам"',
+                contacts_additional_keys: 'Ключи: выдаются после оплаты членского взноса',
+                footer_nav: 'Навигация',
+                footer_association: 'Товарищество',
+                footer_contact: 'Контакты',
+                footer_tagline: 'место для тех, кто любит воду',
+                report_btn: 'Сообщить о проблеме'
+            },
+            en: {
+                nav_home: 'Home',
+                nav_about: 'About',
+                nav_gallery: 'Gallery',
+                nav_projects: 'Projects',
+                nav_members: 'For Members',
+                nav_fishing: 'Fishing Club',
+                nav_contacts: 'Contacts',
+                contacts_title: 'Contacts',
+                contacts_general_title: 'General Contacts',
+                contacts_association_web: 'Founder: Aleksandr Maiorov',
+                contacts_association_title: 'HÜ Kulgu paadigaraazid',
+                contacts_association_head: 'Chairman: Sergei Rusakov',
+                contacts_association_hours: 'Reception: Monday, Wednesday: 17:00 – 19:00',
+                contacts_association_note: '* For membership and general questions',
+                contacts_accountant_title: 'Accountant',
+                contacts_accountant_name: 'Tamara Kuzmina',
+                contacts_accountant_hours: 'Tuesday, Thursday: 10:00 – 14:00',
+                contacts_accountant_address: '5 Accountant St, office 12, Narva',
+                contacts_accountant_note: '* By appointment only',
+                contacts_fishing_title: 'Fishing Club',
+                contacts_fishing_head: 'Leader: Sergei Sidorov',
+                contacts_fishing_hours: 'Meetings: every Sunday, 10:00 – 12:00',
+                contacts_fishing_note: '* Any member of the association can join',
+                contacts_additional_title: 'Additional Information',
+                contacts_additional_meeting: 'General meeting: every Wednesday, 18:00',
+                contacts_additional_next: 'Next meeting: December 15, 2026',
+                contacts_additional_docs: 'Documents: available in "For Members" section',
+                contacts_additional_keys: 'Keys: issued after payment of membership fee',
+                footer_nav: 'Navigation',
+                footer_association: 'Association',
+                footer_contact: 'Contacts',
+                footer_tagline: 'a place for those who love water',
+                report_btn: 'Report a problem'
+            },
+            et: {
+                nav_home: 'Avaleht',
+                nav_about: 'Meist',
+                nav_gallery: 'Galerii',
+                nav_projects: 'Projektid',
+                nav_members: 'Liikmetele',
+                nav_fishing: 'Kalastusklubi',
+                nav_contacts: 'Kontaktid',
+                contacts_title: 'Kontaktid',
+                contacts_general_title: 'Üldised kontaktid',
+                contacts_association_web: 'Asutaja: Aleksandr Maiorov',
+                contacts_association_title: 'HÜ Kulgu paadigaraazid',
+                contacts_association_head: 'Esimees: Sergei Rusakov',
+                contacts_association_hours: 'Vastuvõtt: esmaspäev, kolmapäev: 17:00 – 19:00',
+                contacts_association_note: '* Liikmelisuse ja üldiste küsimuste korral',
+                contacts_accountant_title: 'Raamatupidaja',
+                contacts_accountant_name: 'Tamara Kuzmina',
+                contacts_accountant_hours: 'Teisipäev, Neljapäev: 10:00 – 14:00',
+                contacts_accountant_address: 'Raamatupidamise tn 5, kab. 12, Narva',
+                contacts_accountant_note: '* Ainult eelneval kokkuleppel',
+                contacts_fishing_title: 'Kalastusklubi',
+                contacts_fishing_head: 'Juht: Sergei Sidorov',
+                contacts_fishing_hours: 'Kohtumised: igal pühapäeval, 10:00 – 12:00',
+                contacts_fishing_note: '* Iga ühistu liige võib liituda',
+                contacts_additional_title: 'Lisainformatsioon',
+                contacts_additional_meeting: 'Üldkoosolek: igal kolmapäeval, 18:00',
+                contacts_additional_next: 'Järgmine koosolek: 15. detsember 2026',
+                contacts_additional_docs: 'Dokumendid: saadaval rubriigis "Liikmetele"',
+                contacts_additional_keys: 'Võtmed: väljastatakse pärast liikmemaksu tasumist',
+                footer_nav: 'Navigatsioon',
+                footer_association: 'Ühistu',
+                footer_contact: 'Kontaktid',
+                footer_tagline: 'koht neile, kes armastavad vett',
+                report_btn: 'Teata probleemist'
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru');
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.getAttribute('data-lang'));
+            });
+        });
+    </script>
+</body>
+</html>

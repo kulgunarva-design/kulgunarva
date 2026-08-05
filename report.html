@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сообщить о проблеме — HÜ Kulgupaadigaraazid</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ ЖАЛОБ ===== */
+        .report-header {
+            padding: 40px 0 20px;
+        }
+        .report-header h1 {
+            font-size: 36px;
+            color: #0A2E4A;
+        }
+        .report-header h1 i {
+            color: #38B2AC;
+        }
+
+        .report-form-wrapper {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(10, 46, 74, 0.08);
+            border: 1px solid rgba(56, 178, 172, 0.12);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        .report-form-wrapper .form-group {
+            margin-bottom: 20px;
+        }
+        .report-form-wrapper label {
+            display: block;
+            font-weight: 600;
+            color: #0A2E4A;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .report-form-wrapper label .required {
+            color: #E8705A;
+        }
+        .report-form-wrapper input,
+        .report-form-wrapper select,
+        .report-form-wrapper textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: 0.25s;
+            background: #F7FAFC;
+        }
+        .report-form-wrapper input:focus,
+        .report-form-wrapper select:focus,
+        .report-form-wrapper textarea:focus {
+            border-color: #38B2AC;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(56, 178, 172, 0.10);
+        }
+        .report-form-wrapper textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .report-form-wrapper .btn-submit {
+            background: #E8705A;
+            color: #fff;
+            border: none;
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 300px;
+            display: inline-block;
+            box-shadow: 0 4px 16px rgba(232, 112, 90, 0.25);
+        }
+        .report-form-wrapper .btn-submit:hover {
+            background: #d45a44;
+            transform: scale(1.02);
+        }
+        .report-form-wrapper .note {
+            font-size: 14px;
+            color: #5A6A7A;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .report-success {
+            display: none;
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            color: #155724;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .report-form-wrapper {
+                padding: 24px;
+            }
+            .report-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TOP BAR (как на главной) ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#"><i class="fas fa-phone"></i> +372 5555 1234</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@kulgupaadigaraazid.ee</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ru">РУ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="et">ET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⛵</div>
+                <div class="logo-text">Kulgupaadi<span>garaazid</span></div>
+            </a>
+            <nav>
+                <a href="index.html" data-key="nav_home">Главная</a>
+                <a href="about.html" data-key="nav_about">О нас</a>
+                <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                <a href="projects.html" data-key="nav_projects">Проекты</a>
+                <a href="members.html" data-key="nav_members">Членам</a>
+                <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== СТРАНИЦА ЖАЛОБ ===== -->
+    <section class="report-header">
+        <div class="container">
+            <h1><i class="fas fa-bullhorn"></i> <span data-key="report_page_title">Сообщить о проблеме</span></h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="report-form-wrapper">
+                <p style="margin-bottom: 24px; color: #4A5A6A; font-size: 16px;" data-key="report_page_desc">
+                    Заметили недоработку? Грязно, сломано, нет освещения или есть другие вопросы?<br />
+                    Сообщите нам — мы постараемся решить проблему оперативно.
+                </p>
+
+                <!-- ===== ИСПРАВЛЕНА ПОЧТА ===== -->
+                <form id="reportForm" action="https://formsubmit.co/kulgunarva@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Жалоба / Сообщение о проблеме" />
+                    <input type="hidden" name="_captcha" value="true" />
+                    <input type="hidden" name="_next" value="https://ваш-сайт.ee/report.html?success=1" />
+
+                    <div class="form-group">
+                        <label for="name" data-key="report_label_name">Ваше имя <span class="required">*</span></label>
+                        <input type="text" id="name" name="Имя" required placeholder="Иван Петров" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-key="report_label_email">E-mail <span class="required">*</span></label>
+                        <input type="email" id="email" name="Email" required placeholder="ivan@example.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="place" data-key="report_label_place">Где проблема? <span class="required">*</span></label>
+                        <input type="text" id="place" name="Место" required placeholder="Например: Гараж №5, причал, территория у воды..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category" data-key="report_label_category">Категория</label>
+                        <select id="category" name="Категория">
+                            <option value="" data-key="report_category_select">Выберите...</option>
+                            <option value="Освещение" data-key="report_category_gov">Жалобы на работу правления</option>
+                            <option value="Освещение" data-key="report_category_light">Освещение</option>
+                            <option value="Чистота" data-key="report_category_clean">Чистота / Мусор</option>
+                            <option value="Ремонт" data-key="report_category_repair">Ремонт / Поломка</option>
+                            <option value="Безопасность" data-key="report_category_safety">Безопасность</option>
+                            <option value="Другое" data-key="report_category_other">Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" data-key="report_label_desc">Описание проблемы <span class="required">*</span></label>
+                        <textarea id="description" name="Описание" required placeholder="Опишите, что случилось, когда заметили..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo" data-key="report_label_photo">Фото (если есть)</label>
+                        <input type="file" id="photo" name="Фото" accept="image/*" />
+                    </div>
+
+                    <button type="submit" class="btn-submit" data-key="report_submit">📩 Отправить сообщение</button>
+
+                    <div id="reportSuccess" class="report-success">
+                        ✅ <span data-key="report_success">Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.</span>
+                    </div>
+
+                    <div class="note" data-key="report_note">* Все сообщения конфиденциальны. Мы стараемся отвечать в течение 2 рабочих дней.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>HÜ Kulgupaadigaraazid</h4>
+                    <p style="font-size:14px; color:#A0C4D8;">Место для тех, кто любит воду и лодки.</p>
+                </div>
+                <div>
+                    <h4 data-key="footer_nav">Навигация</h4>
+                    <a href="index.html" data-key="nav_home">Главная</a>
+                    <a href="about.html" data-key="nav_about">О нас</a>
+                    <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                    <a href="projects.html" data-key="nav_projects">Проекты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_association">Товарищество</h4>
+                    <a href="members.html" data-key="nav_members">Членам</a>
+                    <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                    <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_contact">Контакты</h4>
+                    <a href="#"><i class="fas fa-phone"></i> +372 5555 1234</a>
+                    <a href="#"><i class="fas fa-envelope"></i> info@kulgupaadigaraazid.ee</a>
+                    <a href="#"><i class="fas fa-map-pin"></i> Narva, Estonia</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 HÜ Kulgupaadigaraazid — <span data-key="footer_tagline">место для тех, кто любит воду</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== МУЛЬТИЯЗЫЧНОСТЬ =====
+        const translations = {
+            ru: {
+                nav_home: 'Главная',
+                nav_about: 'О нас',
+                nav_gallery: 'Галерея',
+                nav_projects: 'Проекты',
+                nav_members: 'Членам',
+                nav_fishing: 'Рыболовный клуб',
+                nav_contacts: 'Контакты',
+                report_page_title: 'Сообщить о проблеме',
+                report_page_desc: 'Заметили недоработку? Грязно, сломано, нет освещения или есть другие вопросы? Сообщите нам — мы постараемся решить проблему оперативно.',
+                report_label_name: 'Ваше имя',
+                report_label_email: 'E-mail',
+                report_label_place: 'Где проблема?',
+                report_label_category: 'Категория',
+                report_category_select: 'Выберите...',
+                report_category_light: 'Освещение',
+                report_category_gov: 'Жалобы на работу правления',
+                report_category_clean: 'Чистота / Мусор',
+                report_category_repair: 'Ремонт / Поломка',
+                report_category_safety: 'Безопасность',
+                report_category_other: 'Другое',
+                report_label_desc: 'Описание проблемы',
+                report_label_photo: 'Фото (если есть)',
+                report_submit: '📩 Отправить сообщение',
+                report_success: 'Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.',
+                report_note: '* Все сообщения конфиденциальны. Мы стараемся отвечать в течение 2 рабочих дней.',
+                footer_nav: 'Навигация',
+                footer_association: 'Товарищество',
+                footer_contact: 'Контакты',
+                footer_tagline: 'место для тех, кто любит воду'
+            },
+            en: {
+                nav_home: 'Home',
+                nav_about: 'About',
+                nav_gallery: 'Gallery',
+                nav_projects: 'Projects',
+                nav_members: 'For Members',
+                nav_fishing: 'Fishing Club',
+                nav_contacts: 'Contacts',
+                report_page_title: 'Report a Problem',
+                report_page_desc: 'Noticed something wrong? Dirty, broken, no lighting or other issues? Let us know — we\'ll try to resolve it promptly.',
+                report_label_name: 'Your name',
+                report_label_email: 'E-mail',
+                report_label_place: 'Where is the problem?',
+                report_label_category: 'Category',
+                report_category_select: 'Select...',
+                report_category_light: 'Lighting',
+                report_category_gov: 'Complaints about the Management Board',
+                report_category_clean: 'Cleanliness / Trash',
+                report_category_repair: 'Repair / Breakdown',
+                report_category_safety: 'Safety',
+                report_category_other: 'Other',
+                report_label_desc: 'Description of the problem',
+                report_label_photo: 'Photo (if available)',
+                report_submit: '📩 Send message',
+                report_success: 'Thank you! Your message has been sent. We will contact you shortly.',
+                report_note: '* All messages are confidential. We try to respond within 2 business days.',
+                footer_nav: 'Navigation',
+                footer_association: 'Association',
+                footer_contact: 'Contacts',
+                footer_tagline: 'a place for those who love water'
+            },
+            et: {
+                nav_home: 'Avaleht',
+                nav_about: 'Meist',
+                nav_gallery: 'Galerii',
+                nav_projects: 'Projektid',
+                nav_members: 'Liikmetele',
+                nav_fishing: 'Kalastusklubi',
+                nav_contacts: 'Kontaktid',
+                report_page_title: 'Teata probleemist',
+                report_page_desc: 'Märkasid midagi valesti? Määrdunud, katki, puudub valgustus või muid küsimusi? Andke meile teada — proovime probleemi kiiresti lahendada.',
+                report_label_name: 'Teie nimi',
+                report_label_email: 'E-post',
+                report_label_place: 'Kus on probleem?',
+                report_label_category: 'Kategooria',
+                report_category_select: 'Valige...',
+                report_category_light: 'Valgustus',
+                report_category_gov: 'Kaebused juhatuse töö kohta',
+                report_category_clean: 'Puhtus / Prügi',
+                report_category_repair: 'Remont / Rike',
+                report_category_safety: 'Turvalisus',
+                report_category_other: 'Muu',
+                report_label_desc: 'Probleemi kirjeldus',
+                report_label_photo: 'Foto (kui on)',
+                report_submit: '📩 Saada teade',
+                report_success: 'Aitäh! Teie teade on saadetud. Võtame teiega peagi ühendust.',
+                report_note: '* Kõik teated on konfidentsiaalsed. Püüame vastata 2 tööpäeva jooksul.',
+                footer_nav: 'Navigatsioon',
+                footer_association: 'Ühistu',
+                footer_contact: 'Kontaktid',
+                footer_tagline: 'koht neile, kes armastavad vett'
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru');
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.getAttribute('data-lang'));
+            });
+        });
+
+        // ===== ПОКАЗ СООБЩЕНИЯ ОБ УСПЕХЕ =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                document.getElementById('reportSuccess').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
