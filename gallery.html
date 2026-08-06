@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фотогалерея — HÜ Kulgu paadigaraazid</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== GALLERY PAGE ===== */
+        .gallery-header {
+            padding: 40px 0 20px;
+        }
+        .gallery-header h1 {
+            font-size: 36px;
+            color: #0A2E4A;
+            text-align: center;
+        }
+        .gallery-header h1 i {
+            color: #38B2AC;
+        }
+        .gallery-header p {
+            text-align: center;
+            color: #5A6A7A;
+            margin-top: 8px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(10, 46, 74, 0.06);
+            transition: 0.3s;
+            aspect-ratio: 1 / 1;
+            background: #f0f4f8;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(10, 46, 74, 0.12);
+            z-index: 2;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin: 30px 0 20px;
+            flex-wrap: wrap;
+        }
+        .pagination a {
+            display: inline-block;
+            padding: 8px 14px;
+            background: #fff;
+            color: #0A2E4A;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid #E2E8F0;
+            transition: 0.2s;
+            min-width: 36px;
+            text-align: center;
+        }
+        .pagination a:hover {
+            background: #38B2AC;
+            color: #fff;
+            border-color: #38B2AC;
+        }
+        .pagination a.active {
+            background: #0A2E4A;
+            color: #fff;
+            border-color: #0A2E4A;
+        }
+        .pagination a.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* ===== COUNTER ===== */
+        .gallery-counter {
+            text-align: center;
+            color: #5A6A7A;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .gallery-counter strong {
+            color: #0A2E4A;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 8px;
+            }
+            .gallery-header h1 {
+                font-size: 28px;
+            }
+            .pagination a {
+                padding: 6px 10px;
+                font-size: 12px;
+                min-width: 30px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ru">РУ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="et">ET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⛵</div>
+                <div class="logo-text">Kulgu<span> paadigaraazid</span></div>
+            </a>
+            <nav>
+                <a href="index.html" data-key="nav_home">Главная</a>
+                <a href="about.html" data-key="nav_about">О нас</a>
+                <a href="gallery.html" class="active" data-key="nav_gallery">Галерея</a>
+                <a href="projects.html" data-key="nav_projects">Проекты</a>
+                <a href="members.html" data-key="nav_members">Членам</a>
+                <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="gallery-header">
+        <div class="container">
+            <h1><i class="fas fa-images"></i> <span data-key="gallery_title">Фотогалерея</span></h1>
+            <p data-key="gallery_desc">Наши моменты и события</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="gallery-counter">
+                Всего фото: <strong>185</strong> &nbsp;|&nbsp; Страница <strong id="currentPage">1</strong> из <strong>7</strong>
+                &nbsp;|&nbsp; Показано <strong>30</strong> фото
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Фото загружаются через JavaScript -->
+            </div>
+
+            <div class="pagination" id="pagination"></div>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>HÜ Kulgu paadigaraazid</h4>
+                    <p style="font-size:14px; color:#A0C4D8;">Место для тех, кто любит воду и лодки.</p>
+                </div>
+                <div>
+                    <h4 data-key="footer_nav">Навигация</h4>
+                    <a href="index.html" data-key="nav_home">Главная</a>
+                    <a href="about.html" data-key="nav_about">О нас</a>
+                    <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                    <a href="projects.html" data-key="nav_projects">Проекты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_association">Товарищество</h4>
+                    <a href="members.html" data-key="nav_members">Членам</a>
+                    <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                    <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_contact">Контакты</h4>
+                    <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                    <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-pin"></i> Narva, Estonia</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 HÜ Kulgu paadigaraazid — <span data-key="footer_tagline">место для тех, кто любит воду</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ПЛАВАЮЩАЯ КНОПКА ===== -->
+    <a href="report.html" class="floating-report-btn">
+        <i class="fas fa-bullhorn"></i>
+        <span data-key="report_btn">Сообщить о проблеме</span>
+    </a>
+
+    <script>
+        // ===== НАСТРОЙКИ ГАЛЕРЕИ =====
+        const totalPhotos = 185;
+        const photosPerPage = 30;
+        const totalPages = Math.ceil(totalPhotos / photosPerPage);
+        const folder = 'img/gallery/';
+        const ext = '.jpg';
+
+        // ===== ГЕНЕРАЦИЯ СПИСКА ФАЙЛОВ =====
+        function getPhotoNumbers() {
+            const numbers = [];
+            for (let i = 1; i <= totalPhotos; i++) {
+                numbers.push(i);
+            }
+            return numbers;
+        }
+
+        // ===== ОТРИСОВКА ГАЛЕРЕИ =====
+        function renderGallery(page) {
+            const start = (page - 1) * photosPerPage;
+            const end = Math.min(start + photosPerPage, totalPhotos);
+            const photos = getPhotoNumbers().slice(start, end);
+
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+
+            photos.forEach(num => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.innerHTML = `<img src="${folder}${num}${ext}" alt="Фото ${num}" loading="lazy" />`;
+                grid.appendChild(div);
+            });
+
+            // Обновляем счётчик
+            document.getElementById('currentPage').textContent = page;
+            document.querySelector('.gallery-counter strong:last-child').textContent = photos.length;
+
+            // Обновляем пагинацию
+            renderPagination(page);
+        }
+
+        // ===== ПАГИНАЦИЯ =====
+        function renderPagination(currentPage) {
+            const container = document.getElementById('pagination');
+            let html = '';
+
+            // Предыдущая
+            if (currentPage > 1) {
+                html += `<a href="#" data-page="${currentPage - 1}">‹</a>`;
+            } else {
+                html += `<span class="disabled">‹</span>`;
+            }
+
+            // Номера страниц
+            let start = Math.max(1, currentPage - 2);
+            let end = Math.min(totalPages, currentPage + 2);
+
+            if (start > 1) {
+                html += `<a href="#" data-page="1">1</a>`;
+                if (start > 2) html += `<span>…</span>`;
+            }
+
+            for (let i = start; i <= end; i++) {
+                html += `<a href="#" data-page="${i}" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
+            }
+
+            if (end < totalPages) {
+                if (end < totalPages - 1) html += `<span>…</span>`;
+                html += `<a href="#" data-page="${totalPages}">${totalPages}</a>`;
+            }
+
+            // Следующая
+            if (currentPage < totalPages) {
+                html += `<a href="#" data-page="${currentPage + 1}">›</a>`;
+            } else {
+                html += `<span class="disabled">›</span>`;
+            }
+
+            container.innerHTML = html;
+
+            // Обработчики кликов
+            container.querySelectorAll('a[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = parseInt(this.dataset.page);
+                    if (page !== currentPage) {
+                        renderGallery(page);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        // ===== ЗАГРУЗКА СТРАНИЦЫ =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Получаем страницу из URL (?page=2)
+            const params = new URLSearchParams(window.location.search);
+            const page = parseInt(params.get('page')) || 1;
+            renderGallery(Math.min(page, totalPages));
+        });
+
+        // ===== МУЛЬТИЯЗЫЧНОСТЬ =====
+        const translations = {
+            ru: {
+                nav_home: 'Главная',
+                nav_about: 'О нас',
+                nav_gallery: 'Галерея',
+                nav_projects: 'Проекты',
+                nav_members: 'Членам',
+                nav_fishing: 'Рыболовный клуб',
+                nav_contacts: 'Контакты',
+                gallery_title: 'Фотогалерея',
+                gallery_desc: 'Наши моменты и события',
+                footer_nav: 'Навигация',
+                footer_association: 'Товарищество',
+                footer_contact: 'Контакты',
+                footer_tagline: 'место для тех, кто любит воду',
+                report_btn: 'Сообщить о проблеме'
+            },
+            en: {
+                nav_home: 'Home',
+                nav_about: 'About',
+                nav_gallery: 'Gallery',
+                nav_projects: 'Projects',
+                nav_members: 'For Members',
+                nav_fishing: 'Fishing Club',
+                nav_contacts: 'Contacts',
+                gallery_title: 'Photo Gallery',
+                gallery_desc: 'Our moments and events',
+                footer_nav: 'Navigation',
+                footer_association: 'Association',
+                footer_contact: 'Contacts',
+                footer_tagline: 'a place for those who love water',
+                report_btn: 'Report a problem'
+            },
+            et: {
+                nav_home: 'Avaleht',
+                nav_about: 'Meist',
+                nav_gallery: 'Galerii',
+                nav_projects: 'Projektid',
+                nav_members: 'Liikmetele',
+                nav_fishing: 'Kalastusklubi',
+                nav_contacts: 'Kontaktid',
+                gallery_title: 'Fotogalerii',
+                gallery_desc: 'Meie hetked ja sündmused',
+                footer_nav: 'Navigatsioon',
+                footer_association: 'Ühistu',
+                footer_contact: 'Kontaktid',
+                footer_tagline: 'koht neile, kes armastavad vett',
+                report_btn: 'Teata probleemist'
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru');
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.getAttribute('data-lang'));
+            });
+        });
+    </script>
+</body>
+</html>
