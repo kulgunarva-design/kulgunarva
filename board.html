@@ -1,260 +1,223 @@
-<script>
-    // ===== НАСТРОЙКИ =====
-    // 🔽 ИСПРАВЛЕННАЯ ССЫЛКА 🔽
-    const GOOGLE_SHEET_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGxfbWHSKP-M_pg_vmih8OH1demukme48YMaTcVQzaHzBoKFdUN4Iv35RvnhyUS6uXo4uE1z1OXrmO/pub?output=csv';
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Доска объявлений</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ru">РУ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="et">ET</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    // ===== МУЛЬТИЯЗЫЧНОСТЬ =====
-    const translations = {
-        ru: {
-            nav_home: 'Главная',
-            nav_about: 'О нас',
-            nav_gallery: 'Галерея',
-            nav_projects: 'Проекты',
-            nav_members: 'Членам',
-            nav_fishing: 'Рыболовный клуб',
-            nav_board: 'Доска объявлений',
-            nav_contacts: 'Контакты',
-            board_title: 'Доска объявлений',
-            board_desc: '🚤 Снять лодку · ⛵ Покататься · 🐟 Купить рыбу · 🛒 Продажа / Покупка',
-            board_add_btn: 'Добавить объявление',
-            board_empty: 'Объявлений пока нет. Будьте первым!',
-            loading: 'Загрузка объявлений...',
-            filter_all: 'Все',
-            filter_rent: 'Снять',
-            filter_offer: 'Покататься',
-            filter_fish: 'Рыба',
-            filter_sell: 'Продажа',
-            footer_nav: 'Навигация',
-            footer_association: 'Товарищество',
-            footer_contact: 'Контакты',
-            footer_tagline: 'место для тех, кто любит воду',
-            report_btn: 'Сообщить о проблеме'
-        },
-        en: {
-            nav_home: 'Home',
-            nav_about: 'About',
-            nav_gallery: 'Gallery',
-            nav_projects: 'Projects',
-            nav_members: 'For Members',
-            nav_fishing: 'Fishing Club',
-            nav_board: 'Board',
-            nav_contacts: 'Contacts',
-            board_title: 'Board',
-            board_desc: '🚤 Rent a boat · ⛵ Boat trip · 🐟 Buy fish · 🛒 Sale / Purchase',
-            board_add_btn: 'Add listing',
-            board_empty: 'No listings yet. Be the first!',
-            loading: 'Loading listings...',
-            filter_all: 'All',
-            filter_rent: 'Rent',
-            filter_offer: 'Trip',
-            filter_fish: 'Fish',
-            filter_sell: 'Sale',
-            footer_nav: 'Navigation',
-            footer_association: 'Association',
-            footer_contact: 'Contacts',
-            footer_tagline: 'a place for those who love water',
-            report_btn: 'Report a problem'
-        },
-        et: {
-            nav_home: 'Avaleht',
-            nav_about: 'Meist',
-            nav_gallery: 'Galerii',
-            nav_projects: 'Projektid',
-            nav_members: 'Liikmetele',
-            nav_fishing: 'Kalastusklubi',
-            nav_board: 'Kuulutuste tahvel',
-            nav_contacts: 'Kontaktid',
-            board_title: 'Kuulutuste tahvel',
-            board_desc: '🚤 Rentida paat · ⛵ Paadisõit · 🐟 Osta kala · 🛒 Müük / Ost',
-            board_add_btn: 'Lisa kuulutus',
-            board_empty: 'Kuulutusi veel pole. Ole esimene!',
-            loading: 'Kuulutuste laadimine...',
-            filter_all: 'Kõik',
-            filter_rent: 'Rentida',
-            filter_offer: 'Sõit',
-            filter_fish: 'Kala',
-            filter_sell: 'Müük',
-            footer_nav: 'Navigatsioon',
-            footer_association: 'Ühistu',
-            footer_contact: 'Kontaktid',
-            footer_tagline: 'koht neile, kes armastavad vett',
-            report_btn: 'Teata probleemist'
+    <!-- HEADER -->
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⛵</div>
+                <div class="logo-text">Kulgu<span> paadigaraazid</span></div>
+            </a>
+            <nav>
+                <a href="index.html" data-key="nav_home">Главная</a>
+                <a href="about.html" data-key="nav_about">О нас</a>
+                <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                <a href="board.html" class="active" data-key="nav_board">Доска</a>
+                <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- СТРАНИЦА -->
+    <section style="padding: 40px 0;">
+        <div class="container">
+            <h1 style="color: #0A2E4A; text-align:center;">📋 Доска объявлений</h1>
+            <p style="text-align:center; color:#5A6A7A;">🚤 Снять лодку · ⛵ Покататься · 🐟 Купить рыбу · 🛒 Продажа</p>
+
+            <div style="text-align:center; margin: 30px 0;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-ptb6ZnLiJMJKXQktDuJp5ae-7Y-eW3erh3_JGg8myN0kFg/viewform?usp=dialog" target="_blank" class="btn" style="background:#E8705A; color:#fff; padding:12px 32px; border-radius:50px; text-decoration:none; font-weight:700;">
+                    ➕ Добавить объявление
+                </a>
+            </div>
+
+            <div id="listingsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                <!-- Сюда подгрузятся объявления -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p style="text-align:center; color:#A0C4D8;">© 2026 HÜ Kulgu paadigaraazid</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== ССЫЛКА НА ТАБЛИЦУ =====
+        const GOOGLE_SHEET_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGxfbWHSKP-M_pg_vmih8OH1demukme48YMaTcVQzaHzBoKFdUN4Iv35RvnhyUS6uXo4uE1z1OXrmO/pub?output=csv';
+
+        // ===== МУЛЬТИЯЗЫЧНОСТЬ =====
+        const translations = {
+            ru: {
+                nav_home: 'Главная',
+                nav_about: 'О нас',
+                nav_gallery: 'Галерея',
+                nav_board: 'Доска',
+                nav_contacts: 'Контакты'
+            },
+            en: {
+                nav_home: 'Home',
+                nav_about: 'About',
+                nav_gallery: 'Gallery',
+                nav_board: 'Board',
+                nav_contacts: 'Contacts'
+            },
+            et: {
+                nav_home: 'Avaleht',
+                nav_about: 'Meist',
+                nav_gallery: 'Galerii',
+                nav_board: 'Tahvel',
+                nav_contacts: 'Kontaktid'
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            localStorage.setItem('preferredLanguage', lang);
         }
-    };
 
-    let currentLang = 'ru';
-
-    function setLanguage(lang) {
-        currentLang = lang;
-        const t = translations[lang];
-        document.querySelectorAll('[data-key]').forEach(el => {
-            const key = el.getAttribute('data-key');
-            if (t[key]) {
-                el.textContent = t[key];
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru');
             }
         });
+
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            btn.addEventListener('click', () => {
+                setLanguage(btn.getAttribute('data-lang'));
+            });
         });
-        document.documentElement.lang = lang;
-        localStorage.setItem('preferredLanguage', lang);
-    }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const savedLang = localStorage.getItem('preferredLanguage');
-        if (savedLang && translations[savedLang]) {
-            setLanguage(savedLang);
-        } else {
-            setLanguage('ru');
-        }
-    });
+        // ===== ЗАГРУЗКА ОБЪЯВЛЕНИЙ =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('listingsGrid');
 
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            setLanguage(btn.getAttribute('data-lang'));
-        });
-    });
+            fetch(GOOGLE_SHEET_CSV)
+                .then(response => {
+                    if (!response.ok) throw new Error('Ошибка загрузки');
+                    return response.text();
+                })
+                .then(csv => {
+                    const rows = csv.split('\n').filter(row => row.trim() !== '');
+                    if (rows.length < 2) {
+                        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#7f8c8d;">Объявлений пока нет</p>`;
+                        return;
+                    }
 
-    // ===== ЗАГРУЗКА ОБЪЯВЛЕНИЙ ИЗ GOOGLE ТАБЛИЦЫ =====
-    document.addEventListener('DOMContentLoaded', function() {
-        loadListings();
-    });
+                    // Парсим заголовки
+                    const headers = rows[0].split(',');
+                    const data = rows.slice(1).map(row => row.split(','));
 
-    function loadListings() {
-        const grid = document.getElementById('listingsGrid');
+                    // Находим нужные колонки
+                    const typeIdx = headers.indexOf('Тип объявления');
+                    const titleIdx = headers.indexOf('Заголовок');
+                    const descIdx = headers.indexOf('Описание');
+                    const dateIdx = headers.indexOf('Дата и время');
+                    const seatsIdx = headers.indexOf('Места');
+                    const priceIdx = headers.indexOf('Цена');
+                    const nameIdx = headers.indexOf('Имя');
+                    const contactIdx = headers.indexOf('Контакт');
+                    const statusIdx = headers.indexOf('Статус');
 
-        // Показываем загрузку
-        grid.innerHTML = `
-            <div class="loading-spinner">
-                <i class="fas fa-spinner"></i>
-                <p style="margin-top:12px;" data-key="loading">Загрузка объявлений...</p>
-            </div>
-        `;
+                    // Фильтруем одобренные
+                    const approved = data.filter(row => {
+                        if (statusIdx === -1) return true;
+                        return row[statusIdx] && row[statusIdx].trim().toLowerCase() === 'одобрено';
+                    });
 
-        fetch(GOOGLE_SHEET_CSV)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP ошибка: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(csv => {
-                const rows = parseCSV(csv);
-                if (rows.length < 2) {
-                    grid.innerHTML = `<div class="empty-board"><i class="fas fa-inbox"></i> <span data-key="board_empty">Объявлений пока нет. Будьте первым!</span></div>`;
-                    return;
-                }
+                    if (approved.length === 0) {
+                        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#7f8c8d;">Объявлений пока нет</p>`;
+                        return;
+                    }
 
-                // Парсим заголовки
-                const headers = rows[0];
-                const data = rows.slice(1);
+                    const typeMap = {
+                        '🚤 Снять лодку': { class: 'rent', label: '🚤 Снять лодку' },
+                        '⛵ Покататься': { class: 'offer', label: '⛵ Покататься' },
+                        '🐟 Купить рыбу': { class: 'fish', label: '🐟 Купить рыбу' },
+                        '🛒 Продажа / Покупка': { class: 'sell', label: '🛒 Продажа' }
+                    };
 
-                // Ищем индексы колонок
-                const typeIdx = headers.indexOf('Тип объявления');
-                const titleIdx = headers.indexOf('Заголовок');
-                const descIdx = headers.indexOf('Описание');
-                const dateIdx = headers.indexOf('Дата и время');
-                const seatsIdx = headers.indexOf('Места');
-                const priceIdx = headers.indexOf('Цена');
-                const nameIdx = headers.indexOf('Имя');
-                const contactIdx = headers.indexOf('Контакт');
-                const statusIdx = headers.indexOf('Статус');
+                    grid.innerHTML = approved.map(row => {
+                        const type = row[typeIdx] || '';
+                        const info = typeMap[type] || { class: 'rent', label: type };
 
-                // Фильтруем только одобренные
-                const approved = data.filter(row => {
-                    if (statusIdx === -1) return true;
-                    return row[statusIdx] && row[statusIdx].trim().toLowerCase() === 'одобрено';
-                });
-
-                if (approved.length === 0) {
-                    grid.innerHTML = `<div class="empty-board"><i class="fas fa-inbox"></i> <span data-key="board_empty">Объявлений пока нет. Будьте первым!</span></div>`;
-                    return;
-                }
-
-                const typeMap = {
-                    '🚤 Снять лодку': { class: 'rent', label: '🚤 Снять лодку' },
-                    '⛵ Покататься': { class: 'offer', label: '⛵ Покататься' },
-                    '🐟 Купить рыбу': { class: 'fish', label: '🐟 Купить рыбу' },
-                    '🛒 Продажа / Покупка': { class: 'sell', label: '🛒 Продажа' }
-                };
-
-                grid.innerHTML = approved.map(row => {
-                    const type = row[typeIdx] || '';
-                    const info = typeMap[type] || { class: 'rent', label: type };
-
-                    return `
-                        <div class="listing-card">
-                            <span class="type-badge ${info.class}">${info.label}</span>
-                            <span class="status-badge">✅ Актуально</span>
-                            <div class="title">${row[titleIdx] || 'Без заголовка'}</div>
-                            <div class="details">
-                                ${row[dateIdx] ? `<span><i class="fas fa-calendar-alt"></i> ${row[dateIdx]}</span>` : ''}
-                                ${row[seatsIdx] ? `<span><i class="fas fa-users"></i> ${row[seatsIdx]}</span>` : ''}
-                                ${row[priceIdx] ? `<span><i class="fas fa-euro-sign"></i> ${row[priceIdx]}</span>` : ''}
+                        return `
+                            <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 16px rgba(10,46,74,0.06); border-left:5px solid ${info.class === 'rent' ? '#0A2E4A' : info.class === 'offer' ? '#38B2AC' : info.class === 'fish' ? '#E8705A' : '#6C2BD9'};">
+                                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                                    <span style="display:inline-block; padding:2px 14px; border-radius:20px; font-size:12px; font-weight:600; color:#fff; background:${info.class === 'rent' ? '#0A2E4A' : info.class === 'offer' ? '#38B2AC' : info.class === 'fish' ? '#E8705A' : '#6C2BD9'};">${info.label}</span>
+                                    <span style="font-size:12px; color:#27ae60; font-weight:600;">✅ Актуально</span>
+                                </div>
+                                <div style="font-size:19px; font-weight:700; color:#0A2E4A; margin:8px 0 4px;">${row[titleIdx] || 'Без заголовка'}</div>
+                                <div style="display:flex; flex-wrap:wrap; gap:8px 18px; font-size:14px; color:#5A6A7A; margin:4px 0;">
+                                    ${row[dateIdx] ? `<span><i class="fas fa-calendar-alt" style="width:18px; color:#38B2AC;"></i> ${row[dateIdx]}</span>` : ''}
+                                    ${row[seatsIdx] ? `<span><i class="fas fa-users" style="width:18px; color:#38B2AC;"></i> ${row[seatsIdx]}</span>` : ''}
+                                    ${row[priceIdx] ? `<span><i class="fas fa-euro-sign" style="width:18px; color:#38B2AC;"></i> ${row[priceIdx]}</span>` : ''}
+                                </div>
+                                <div style="color:#4A5A6A; font-size:14px; margin:8px 0;">${row[descIdx] || ''}</div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #E2E8F0; font-size:14px; color:#0A2E4A; flex-wrap:wrap; gap:8px;">
+                                    <span><i class="fas fa-user" style="color:#38B2AC;"></i> ${row[nameIdx] || 'Аноним'}</span>
+                                    ${row[contactIdx] ? `<a href="tel:${row[contactIdx]}" style="color:#0A2E4A; text-decoration:none; font-weight:600;"><i class="fas fa-phone" style="color:#38B2AC;"></i> ${row[contactIdx]}</a>` : ''}
+                                </div>
                             </div>
-                            <div class="description">${row[descIdx] || ''}</div>
-                            <div class="contact">
-                                <span class="name"><i class="fas fa-user" style="color:#38B2AC;"></i> ${row[nameIdx] || 'Аноним'}</span>
-                                ${row[contactIdx] ? `<a href="tel:${row[contactIdx]}"><i class="fas fa-phone phone-icon"></i> ${row[contactIdx]}</a>` : ''}
-                            </div>
+                        `;
+                    }).join('');
+
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    grid.innerHTML = `
+                        <div style="grid-column:1/-1; text-align:center; padding:40px; color:#E8705A;">
+                            <i class="fas fa-exclamation-triangle" style="font-size:48px; display:block; margin-bottom:16px;"></i>
+                            <p>Не удалось загрузить объявления</p>
+                            <p style="font-size:13px; color:#7f8c8d; margin-top:8px;">Проверьте интернет и ссылку на таблицу</p>
                         </div>
                     `;
-                }).join('');
-
-            })
-            .catch(error => {
-                console.error('Ошибка загрузки:', error);
-                grid.innerHTML = `
-                    <div class="empty-board">
-                        <i class="fas fa-exclamation-triangle" style="color:#E8705A;"></i>
-                        <p style="margin-top:12px;">Не удалось загрузить объявления. Проверьте ссылку на Google Таблицу.</p>
-                        <p style="font-size:13px; color:#7f8c8d; margin-top:8px;">Ссылка: ${GOOGLE_SHEET_CSV}</p>
-                    </div>
-                `;
-            });
-    }
-
-    // ===== ПАРСИНГ CSV =====
-    function parseCSV(csv) {
-        const lines = csv.split('\n');
-        const result = [];
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (line === '') continue;
-            const row = [];
-            let current = '';
-            let inQuotes = false;
-            for (let j = 0; j < line.length; j++) {
-                const char = line[j];
-                if (char === '"') {
-                    inQuotes = !inQuotes;
-                } else if (char === ',' && !inQuotes) {
-                    row.push(current);
-                    current = '';
-                } else {
-                    current += char;
-                }
-            }
-            row.push(current);
-            result.push(row);
-        }
-        return result;
-    }
-
-    // ===== ФИЛЬТРЫ =====
-    document.addEventListener('DOMContentLoaded', function() {
-        const filterTabs = document.querySelectorAll('#filterTabs .tab');
-        let currentFilter = 'all';
-
-        filterTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                filterTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                currentFilter = this.dataset.filter;
-                // Показываем всё, фильтр пока оставляем как есть
-                // (можно добавить фильтрацию на клиенте позже)
-                loadListings();
-            });
+                });
         });
-    });
-</script>
+    </script>
+</body>
+</html>
