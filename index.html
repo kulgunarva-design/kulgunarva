@@ -48,7 +48,7 @@
                 <a href="projects.html" data-key="nav_projects">Проекты</a>
                 <a href="members.html" data-key="nav_members">Членам</a>
                 <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
-		<a href="board.html" data-key="nav_board">Доска объявлений</a>
+                <a href="board.html" data-key="nav_board">Доска объявлений</a>
                 <a href="contacts.html" data-key="nav_contacts">Контакты</a>
             </nav>
         </div>
@@ -63,6 +63,26 @@
                 <a href="https://www.facebook.com/groups/2171012990297411" class="btn" data-key="hero_btn">Присоединиться</a>
             </div>
             <div class="hero-image">⛵</div>
+        </div>
+    </section>
+
+    <!-- ===== НОВОСТНОЙ БЛОК (ОДНО ВЫТЯНУТОЕ ОКНО) ===== -->
+    <section style="padding: 40px 0; background: #EBF5FB;">
+        <div class="container">
+            <h2 style="font-size:28px; color:#0A2E4A; display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+                <i class="fas fa-bullhorn" style="color:#38B2AC;"></i> 
+                <span data-key="news_title">Новости и события</span>
+            </h2>
+
+            <!-- ОДНО ВЫТЯНУТОЕ ОКНО (БЕЗ ЛИШНИХ ССЫЛОК) -->
+            <div style="background:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 4px 16px rgba(10,46,74,0.06); border-left:5px solid #38B2AC;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                    <span style="font-size:13px; color:#5A6A7A;"><i class="fas fa-calendar-alt" style="color:#38B2AC;"></i> <span data-key="news_date">10 августа 2026</span></span>
+                    <span style="background:#0A2E4A; color:#fff; font-size:11px; padding:2px 12px; border-radius:12px; font-weight:600;" data-key="news_tag">Актуально</span>
+                </div>
+                <h3 style="font-size:20px; color:#0A2E4A; margin:8px 0 4px;" data-key="news_title_main">🚤 Пробная новость. Поездка на Чудское озеро</h3>
+                <p style="font-size:15px; color:#4A5A6A; margin:0;" data-key="news_desc_main">Сбор в 08:00 у лодочных гаражей. Есть 3 свободных места. Присоединяйтесь!</p>
+            </div>
         </div>
     </section>
 
@@ -197,7 +217,7 @@
                 nav_projects: 'Проекты',
                 nav_members: 'Членам',
                 nav_fishing: 'Рыболовный клуб',
-		nav_board: 'Доска объявлений',
+                nav_board: 'Доска объявлений',
                 nav_contacts: 'Контакты',
                 hero_title: 'Товарищество лодочных гаражей',
                 hero_desc: 'Будущее Кулгу зависит от каждого из нас. Этот сайт создан для того, чтобы объединить людей, которым небезразлична судьба Кулгу. Только вместе мы можем сделать нашу территорию лучше!',
@@ -227,7 +247,13 @@
                 footer_association: 'Рыболовный клуб',
                 footer_contact: 'Контакты',
                 footer_tagline: 'место для тех, кто любит воду',
-                report_btn: 'Сообщить о проблеме'
+                report_btn: 'Сообщить о проблеме',
+                // ===== НОВОСТНОЙ БЛОК =====
+                news_title: 'Новости и события',
+                news_date: '10 августа 2026',
+                news_tag: 'Актуально',
+                news_title_main: '🚤 Пробная новость. Поездка на Чудское озеро',
+                news_desc_main: 'Сбор в 08:00 у лодочных гаражей. Есть 3 свободных места. Присоединяйтесь!'
             },
             en: {
                 nav_home: 'Home',
@@ -236,7 +262,7 @@
                 nav_projects: 'Projects',
                 nav_members: 'For Members',
                 nav_fishing: 'Fishing Club',
-		nav_board: 'Board',
+                nav_board: 'Board',
                 nav_contacts: 'Contacts',
                 hero_title: 'Boat Garage Association',
                 hero_desc: "Kulgu's future depends on each and every one of us. This website was created to bring together people who care about the future of Kulgu. Only by working together can we make our community a better place!",
@@ -266,7 +292,13 @@
                 footer_association: 'Fishing Club',
                 footer_contact: 'Contacts',
                 footer_tagline: 'a place for those who love water',
-                report_btn: 'Report a problem'
+                report_btn: 'Report a problem',
+                // ===== NEWS BLOCK =====
+                news_title: 'News and Events',
+                news_date: 'August 10, 2026',
+                news_tag: 'Actual',
+                news_title_main: '🚤 Test news. Trip to Lake Peipus',
+                news_desc_main: 'Meeting at 08:00 at the boat garages. 3 seats available. Join us!'
             },
             et: {
                 nav_home: 'Avaleht',
@@ -275,7 +307,7 @@
                 nav_projects: 'Projektid',
                 nav_members: 'Liikmetele',
                 nav_fishing: 'Kalastusklubi',
-		nav_board: 'Kuulutuste tahvel',
+                nav_board: 'Kuulutuste tahvel',
                 nav_contacts: 'Kontaktid',
                 hero_title: 'Kulgupaadigaraazide ühistu',
                 hero_desc: 'Kulgu tulevik sõltub meist kõigist. See veebileht on loodud selleks, et tuua kokku inimesed, kellele Kulgu käekäik läheb korda. Ainult üheskoos suudame muuta meie ühise kodukoha paremaks!',
@@ -305,7 +337,13 @@
                 footer_association: 'Kalastusklubi',
                 footer_contact: 'Kontaktid',
                 footer_tagline: 'koht neile, kes armastavad vett',
-                report_btn: 'Teata probleemist'
+                report_btn: 'Teata probleemist',
+                // ===== UUDISED =====
+                news_title: 'Uudised ja sündmused',
+                news_date: '10. august 2026',
+                news_tag: 'Aktuaalne',
+                news_title_main: '🚤 Test uudis. Reis Peipsi järvele',
+                news_desc_main: 'Kogunemine kell 08:00 paadigaraažide juures. 3 kohta vaba. Liitu!'
             }
         };
 
