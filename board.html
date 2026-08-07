@@ -40,7 +40,10 @@
                 <a href="index.html" data-key="nav_home">Главная</a>
                 <a href="about.html" data-key="nav_about">О нас</a>
                 <a href="gallery.html" data-key="nav_gallery">Галерея</a>
-                <a href="board.html" class="active" data-key="nav_board">Доска</a>
+                <a href="projects.html" data-key="nav_projects">Проекты</a>
+                <a href="members.html" data-key="nav_members">Членам</a>
+                <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                <a href="board.html" class="active" data-key="nav_board">Доска объявлений</a>
                 <a href="contacts.html" data-key="nav_contacts">Контакты</a>
             </nav>
         </div>
@@ -49,12 +52,12 @@
     <!-- СТРАНИЦА -->
     <section style="padding: 40px 0;">
         <div class="container">
-            <h1 style="color: #0A2E4A; text-align:center;">📋 Доска объявлений</h1>
-            <p style="text-align:center; color:#5A6A7A;">🚤 Снять лодку · ⛵ Покататься · 🐟 Купить рыбу · 🛒 Продажа</p>
+            <h1 style="color: #0A2E4A; text-align:center;"><i class="fas fa-list"></i> <span data-key="board_title">Доска объявлений</span></h1>
+            <p style="text-align:center; color:#5A6A7A;" data-key="board_desc">🚤 Снять лодку · ⛵ Покататься · 🐟 Купить рыбу · 🛒 Продажа</p>
 
             <div style="text-align:center; margin: 30px 0;">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-ptb6ZnLiJMJKXQktDuJp5ae-7Y-eW3erh3_JGg8myN0kFg/viewform?usp=dialog" target="_blank" class="btn" style="background:#E8705A; color:#fff; padding:12px 32px; border-radius:50px; text-decoration:none; font-weight:700;">
-                    ➕ Добавить объявление
+                    <i class="fas fa-plus-circle"></i> <span data-key="board_add_btn">Добавить объявление</span>
                 </a>
             </div>
 
@@ -67,7 +70,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p style="text-align:center; color:#A0C4D8;">© 2026 HÜ Kulgu paadigaraazid</p>
+            <p style="text-align:center; color:#A0C4D8;">© 2026 HÜ Kulgu paadigaraazid — <span data-key="footer_tagline">место для тех, кто любит воду</span></p>
         </div>
     </footer>
 
@@ -81,22 +84,49 @@
                 nav_home: 'Главная',
                 nav_about: 'О нас',
                 nav_gallery: 'Галерея',
-                nav_board: 'Доска',
-                nav_contacts: 'Контакты'
+                nav_projects: 'Проекты',
+                nav_members: 'Членам',
+                nav_fishing: 'Рыболовный клуб',
+                nav_board: 'Доска объявлений',
+                nav_contacts: 'Контакты',
+                board_title: 'Доска объявлений',
+                board_desc: '🚤 Снять лодку · ⛵ Покататься · 🐟 Купить рыбу · 🛒 Продажа',
+                board_add_btn: 'Добавить объявление',
+                board_empty: 'Объявлений пока нет',
+                loading: 'Загрузка объявлений...',
+                footer_tagline: 'место для тех, кто любит воду'
             },
             en: {
                 nav_home: 'Home',
                 nav_about: 'About',
                 nav_gallery: 'Gallery',
+                nav_projects: 'Projects',
+                nav_members: 'For Members',
+                nav_fishing: 'Fishing Club',
                 nav_board: 'Board',
-                nav_contacts: 'Contacts'
+                nav_contacts: 'Contacts',
+                board_title: 'Board',
+                board_desc: '🚤 Rent a boat · ⛵ Boat trip · 🐟 Buy fish · 🛒 Sale',
+                board_add_btn: 'Add listing',
+                board_empty: 'No listings yet',
+                loading: 'Loading listings...',
+                footer_tagline: 'a place for those who love water'
             },
             et: {
                 nav_home: 'Avaleht',
                 nav_about: 'Meist',
                 nav_gallery: 'Galerii',
-                nav_board: 'Tahvel',
-                nav_contacts: 'Kontaktid'
+                nav_projects: 'Projektid',
+                nav_members: 'Liikmetele',
+                nav_fishing: 'Kalastusklubi',
+                nav_board: 'Kuulutuste tahvel',
+                nav_contacts: 'Kontaktid',
+                board_title: 'Kuulutuste tahvel',
+                board_desc: '🚤 Rentida paat · ⛵ Paadisõit · 🐟 Osta kala · 🛒 Müük',
+                board_add_btn: 'Lisa kuulutus',
+                board_empty: 'Kuulutusi veel pole',
+                loading: 'Kuulutuste laadimine...',
+                footer_tagline: 'koht neile, kes armastavad vett'
             }
         };
 
@@ -114,6 +144,7 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
+            document.documentElement.lang = lang;
             localStorage.setItem('preferredLanguage', lang);
         }
 
@@ -136,6 +167,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const grid = document.getElementById('listingsGrid');
 
+            // Показываем загрузку
+            grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#5A6A7A;" data-key="loading">Загрузка объявлений...</p>`;
+
             fetch(GOOGLE_SHEET_CSV)
                 .then(response => {
                     if (!response.ok) throw new Error('Ошибка загрузки');
@@ -144,7 +178,7 @@
                 .then(csv => {
                     const rows = csv.split('\n').filter(row => row.trim() !== '');
                     if (rows.length < 2) {
-                        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#7f8c8d;">Объявлений пока нет</p>`;
+                        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#7f8c8d;" data-key="board_empty">Объявлений пока нет</p>`;
                         return;
                     }
 
@@ -170,7 +204,7 @@
                     });
 
                     if (approved.length === 0) {
-                        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#7f8c8d;">Объявлений пока нет</p>`;
+                        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#7f8c8d;" data-key="board_empty">Объявлений пока нет</p>`;
                         return;
                     }
 
