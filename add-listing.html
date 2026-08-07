@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавить объявление — HÜ Kulgu paadigaraazid</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== ADD LISTING PAGE ===== */
+        .form-header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        .form-header h1 {
+            font-size: 36px;
+            color: #0A2E4A;
+        }
+        .form-header h1 i {
+            color: #38B2AC;
+        }
+        .form-header p {
+            color: #5A6A7A;
+            margin-top: 6px;
+        }
+
+        .form-wrapper {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(10, 46, 74, 0.08);
+            border: 1px solid rgba(56, 178, 172, 0.12);
+        }
+
+        .form-wrapper .form-group {
+            margin-bottom: 20px;
+        }
+        .form-wrapper label {
+            display: block;
+            font-weight: 600;
+            color: #0A2E4A;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .form-wrapper label .required {
+            color: #E8705A;
+        }
+        .form-wrapper input,
+        .form-wrapper select,
+        .form-wrapper textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: 0.25s;
+            background: #F7FAFC;
+        }
+        .form-wrapper input:focus,
+        .form-wrapper select:focus,
+        .form-wrapper textarea:focus {
+            border-color: #38B2AC;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(56, 178, 172, 0.10);
+        }
+        .form-wrapper textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-wrapper .btn-submit {
+            background: #E8705A;
+            color: #fff;
+            border: none;
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 4px 16px rgba(232, 112, 90, 0.25);
+        }
+        .form-wrapper .btn-submit:hover {
+            background: #d45a44;
+            transform: scale(1.02);
+        }
+        .form-wrapper .note {
+            font-size: 14px;
+            color: #5A6A7A;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .success-msg {
+            display: none;
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            color: #155724;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .form-wrapper .type-hint {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .form-wrapper {
+                padding: 24px;
+                margin: 0 16px 40px;
+            }
+            .form-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ru">РУ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="et">ET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⛵</div>
+                <div class="logo-text">Kulgu<span> paadigaraazid</span></div>
+            </a>
+            <nav>
+                <a href="index.html" data-key="nav_home">Главная</a>
+                <a href="about.html" data-key="nav_about">О нас</a>
+                <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                <a href="projects.html" data-key="nav_projects">Проекты</a>
+                <a href="members.html" data-key="nav_members">Членам</a>
+                <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                <a href="board.html" data-key="nav_board">Доска объявлений</a>
+                <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== FORM ===== -->
+    <section class="form-header">
+        <div class="container">
+            <h1><i class="fas fa-plus-circle"></i> <span data-key="add_title">Добавить объявление</span></h1>
+            <p data-key="add_desc">Заполните форму — после проверки модератором объявление появится на доске.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="form-wrapper">
+                <form id="listingForm" action="https://formsubmit.co/kulgunarva@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Новое объявление на доске" />
+                    <input type="hidden" name="_captcha" value="true" />
+                    <input type="hidden" name="_next" value="https://ваш-сайт.ee/add-listing.html?success=1" />
+
+                    <!-- Тип объявления -->
+                    <div class="form-group">
+                        <label for="type"><span data-key="add_label_type">Тип объявления</span> <span class="required">*</span></label>
+                        <select id="type" name="Тип" required>
+                            <option value="" data-key="add_type_select">Выберите...</option>
+                            <option value="🚤 Снять лодку" data-key="add_type_rent">🚤 Снять лодку</option>
+                            <option value="⛵ Покатать на лодке" data-key="add_type_offer">⛵ Покатать на лодке</option>
+                            <option value="🐟 Купить рыбу" data-key="add_type_fish">🐟 Купить рыбу</option>
+                            <option value="🛒 Продажа / Покупка" data-key="add_type_sell">🛒 Продажа / Покупка</option>
+                        </select>
+                        <div class="type-hint" data-key="add_type_hint">Выберите категорию вашего объявления</div>
+                    </div>
+
+                    <!-- Заголовок -->
+                    <div class="form-group">
+                        <label for="title"><span data-key="add_label_title">Заголовок</span> <span class="required">*</span></label>
+                        <input type="text" id="title" name="Заголовок" required placeholder="Например: Поездка на Чудское озеро" />
+                    </div>
+
+                    <!-- Описание -->
+                    <div class="form-group">
+                        <label for="description"><span data-key="add_label_desc">Подробное описание</span> <span class="required">*</span></label>
+                        <textarea id="description" name="Описание" required placeholder="Когда, куда, сколько мест, какие условия..."></textarea>
+                    </div>
+
+                    <!-- Дата и время -->
+                    <div class="form-group">
+                        <label for="date"><span data-key="add_label_date">Дата и время</span></label>
+                        <input type="datetime-local" id="date" name="Дата" />
+                        <div class="type-hint" data-key="add_date_hint">Если объявление актуально до определённой даты</div>
+                    </div>
+
+                    <!-- Количество / Объём -->
+                    <div class="form-group">
+                        <label for="seats"><span data-key="add_label_seats">Количество мест / Количество рыбы / Объём</span></label>
+                        <input type="text" id="seats" name="Места" placeholder="Например: 3 места / 5 кг / 1 мотор" />
+                    </div>
+
+                    <!-- Цена -->
+                    <div class="form-group">
+                        <label for="price"><span data-key="add_label_price">Цена (€)</span></label>
+                        <input type="text" id="price" name="Цена" placeholder="10€ / договорная" />
+                    </div>
+
+                    <!-- Имя -->
+                    <div class="form-group">
+                        <label for="name"><span data-key="add_label_name">Ваше имя</span> <span class="required">*</span></label>
+                        <input type="text" id="name" name="Имя" required placeholder="Иван Петров" />
+                    </div>
+
+                    <!-- Контакт -->
+                    <div class="form-group">
+                        <label for="contact"><span data-key="add_label_contact">Контакт (телефон)</span> <span class="required">*</span></label>
+                        <input type="text" id="contact" name="Контакт" required placeholder="+372 5555 1234" />
+                    </div>
+
+                    <button type="submit" class="btn-submit" data-key="add_submit">📩 Отправить на модерацию</button>
+
+                    <div id="successMsg" class="success-msg">
+                        ✅ <span data-key="add_success">Спасибо! Ваше объявление отправлено на модерацию. После проверки оно появится на доске.</span>
+                    </div>
+
+                    <div class="note" data-key="add_note">* Все объявления проходят модерацию перед публикацией.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>HÜ Kulgu paadigaraazid</h4>
+                    <p style="font-size:14px; color:#A0C4D8;">Место для тех, кто любит воду и лодки.</p>
+                </div>
+                <div>
+                    <h4 data-key="footer_nav">Навигация</h4>
+                    <a href="index.html" data-key="nav_home">Главная</a>
+                    <a href="about.html" data-key="nav_about">О нас</a>
+                    <a href="gallery.html" data-key="nav_gallery">Галерея</a>
+                    <a href="projects.html" data-key="nav_projects">Проекты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_association">Товарищество</h4>
+                    <a href="members.html" data-key="nav_members">Членам</a>
+                    <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                    <a href="board.html" data-key="nav_board">Доска объявлений</a>
+                    <a href="contacts.html" data-key="nav_contacts">Контакты</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_contact">Контакты</h4>
+                    <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                    <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-pin"></i> Narva, Estonia</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 HÜ Kulgu paadigaraazid — <span data-key="footer_tagline">место для тех, кто любит воду</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ПЛАВАЮЩАЯ КНОПКА ===== -->
+    <a href="report.html" class="floating-report-btn">
+        <i class="fas fa-bullhorn"></i>
+        <span data-key="report_btn">Сообщить о проблеме</span>
+    </a>
+
+    <script>
+        // ===== МУЛЬТИЯЗЫЧНОСТЬ =====
+        const translations = {
+            ru: {
+                nav_home: 'Главная',
+                nav_about: 'О нас',
+                nav_gallery: 'Галерея',
+                nav_projects: 'Проекты',
+                nav_members: 'Членам',
+                nav_fishing: 'Рыболовный клуб',
+                nav_board: 'Доска объявлений',
+                nav_contacts: 'Контакты',
+                add_title: 'Добавить объявление',
+                add_desc: 'Заполните форму — после проверки модератором объявление появится на доске.',
+                add_label_type: 'Тип объявления',
+                add_type_select: 'Выберите...',
+                add_type_rent: '🚤 Снять лодку',
+                add_type_offer: '⛵ Покатать на лодке',
+                add_type_fish: '🐟 Купить рыбу',
+                add_type_sell: '🛒 Продажа / Покупка',
+                add_type_hint: 'Выберите категорию вашего объявления',
+                add_label_title: 'Заголовок',
+                add_label_desc: 'Подробное описание',
+                add_label_date: 'Дата и время',
+                add_date_hint: 'Если объявление актуально до определённой даты',
+                add_label_seats: 'Количество мест / Количество рыбы / Объём',
+                add_label_price: 'Цена (€)',
+                add_label_name: 'Ваше имя',
+                add_label_contact: 'Контакт (телефон)',
+                add_submit: '📩 Отправить на модерацию',
+                add_success: 'Спасибо! Ваше объявление отправлено на модерацию. После проверки оно появится на доске.',
+                add_note: '* Все объявления проходят модерацию перед публикацией.',
+                footer_nav: 'Навигация',
+                footer_association: 'Товарищество',
+                footer_contact: 'Контакты',
+                footer_tagline: 'место для тех, кто любит воду',
+                report_btn: 'Сообщить о проблеме'
+            },
+            en: {
+                nav_home: 'Home',
+                nav_about: 'About',
+                nav_gallery: 'Gallery',
+                nav_projects: 'Projects',
+                nav_members: 'For Members',
+                nav_fishing: 'Fishing Club',
+                nav_board: 'Board',
+                nav_contacts: 'Contacts',
+                add_title: 'Add Listing',
+                add_desc: 'Fill out the form — after moderator review, your listing will appear on the board.',
+                add_label_type: 'Listing Type',
+                add_type_select: 'Select...',
+                add_type_rent: '🚤 Rent a boat',
+                add_type_offer: '⛵ Boat trip',
+                add_type_fish: '🐟 Buy fish',
+                add_type_sell: '🛒 Sale / Purchase',
+                add_type_hint: 'Select the category of your listing',
+                add_label_title: 'Title',
+                add_label_desc: 'Detailed description',
+                add_label_date: 'Date and time',
+                add_date_hint: 'If the listing is valid until a certain date',
+                add_label_seats: 'Number of seats / Fish quantity / Volume',
+                add_label_price: 'Price (€)',
+                add_label_name: 'Your name',
+                add_label_contact: 'Contact (phone)',
+                add_submit: '📩 Submit for moderation',
+                add_success: 'Thank you! Your listing has been submitted for moderation. It will appear on the board after review.',
+                add_note: '* All listings are moderated before publication.',
+                footer_nav: 'Navigation',
+                footer_association: 'Association',
+                footer_contact: 'Contacts',
+                footer_tagline: 'a place for those who love water',
+                report_btn: 'Report a problem'
+            },
+            et: {
+                nav_home: 'Avaleht',
+                nav_about: 'Meist',
+                nav_gallery: 'Galerii',
+                nav_projects: 'Projektid',
+                nav_members: 'Liikmetele',
+                nav_fishing: 'Kalastusklubi',
+                nav_board: 'Kuulutuste tahvel',
+                nav_contacts: 'Kontaktid',
+                add_title: 'Lisa kuulutus',
+                add_desc: 'Täitke vorm — pärast moderaatori kontrolli ilmub teie kuulutus tahvlile.',
+                add_label_type: 'Kuulutuse tüüp',
+                add_type_select: 'Valige...',
+                add_type_rent: '🚤 Rentida paat',
+                add_type_offer: '⛵ Paadisõit',
+                add_type_fish: '🐟 Osta kala',
+                add_type_sell: '🛒 Müük / Ost',
+                add_type_hint: 'Valige oma kuulutuse kategooria',
+                add_label_title: 'Pealkiri',
+                add_label_desc: 'Üksikasjalik kirjeldus',
+                add_label_date: 'Kuupäev ja kellaaeg',
+                add_date_hint: 'Kui kuulutus kehtib teatud kuupäevani',
+                add_label_seats: 'Kohtade arv / Kala kogus / Maht',
+                add_label_price: 'Hind (€)',
+                add_label_name: 'Teie nimi',
+                add_label_contact: 'Kontakt (telefon)',
+                add_submit: '📩 Saada modereerimisele',
+                add_success: 'Aitäh! Teie kuulutus on saadetud modereerimisele. Pärast kontrolli ilmub see tahvlile.',
+                add_note: '* Kõik kuulutused läbivad enne avaldamist modereerimise.',
+                footer_nav: 'Navigatsioon',
+                footer_association: 'Ühistu',
+                footer_contact: 'Kontaktid',
+                footer_tagline: 'koht neile, kes armastavad vett',
+                report_btn: 'Teata probleemist'
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            } else {
+                setLanguage('ru');
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.getAttribute('data-lang'));
+            });
+        });
+
+        // ===== ПОКАЗ СООБЩЕНИЯ ОБ УСПЕХЕ =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                document.getElementById('successMsg').style.display = 'block';
+                document.getElementById('listingForm').reset();
+                // Прокрутка к сообщению
+                document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    </script>
+</body>
+</html>
