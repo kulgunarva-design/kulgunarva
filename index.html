@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HÜ Kulgu paadigaraazid — Товарищество лодочных гаражей</title>
+    <title>Кулгу, Нарва — лодки, гаражи и сообщество</title><meta name="description" content="Кулгу в Нарве: лодочные гаражи, рыбалка и сообщество. Присоединяйтесь к Facebook-группе, смотрите фотографии и объявления.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-</head>
+<link rel="stylesheet" href="community.css"></head>
 <body>
 
     <!-- ===== TOP BAR ===== -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
-                <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
-                <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+                <a href="tel:+37255606683"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                <a href="mailto:kulgunarva@gmail.com"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
             </div>
             <div class="top-bar-right">
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/groups/2171012990297411" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/groups/2171012990297411" target="_blank" rel="noopener noreferrer" aria-label="Facebook — Kulgu"><i class="fab fa-facebook"></i></a>
+                    
+                    
                 </div>
                 <div class="lang-switch">
                     <button class="lang-btn active" data-lang="ru">РУ</button>
@@ -43,137 +43,18 @@
             </a>
             <nav>
                 <a href="index.html" class="active" data-key="nav_home">Главная</a>
-                <a href="about.html" data-key="nav_about">О нас</a>
+                <a href="index.html#community" data-key="nav_about">О нас</a>
                 <a href="gallery.html" data-key="nav_gallery">Галерея</a>
-                <a href="projects.html" data-key="nav_projects">Проекты</a>
-                <a href="members.html" data-key="nav_members">Членам</a>
-                <a href="fishing-club.html" data-key="nav_fishing">Рыболовный клуб</a>
+                
+                
+                
                 <a href="board.html" data-key="nav_board">Доска объявлений</a>
                 <a href="contacts.html" data-key="nav_contacts">Контакты</a>
             </nav>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1><i class="fas fa-water"></i> <span data-key="hero_title">Товарищество лодочных гаражей</span></h1>
-                <p data-key="hero_desc">Будущее Кулгу зависит от каждого из нас. Этот сайт создан для того, чтобы объединить людей, которым небезразлична судьба Кулгу. Только вместе мы можем сделать нашу территорию лучше!</p>
-                <a href="https://www.facebook.com/groups/2171012990297411" class="btn" data-key="hero_btn">Присоединиться</a>
-            </div>
-            <div class="hero-image">⛵</div>
-        </div>
-    </section>
-
-    <!-- ===== НОВОСТНОЙ БЛОК (ОДНО ВЫТЯНУТОЕ ОКНО) ===== -->
-    <section style="padding: 40px 0; background: #EBF5FB;">
-        <div class="container">
-            <h2 style="font-size:28px; color:#0A2E4A; display:flex; align-items:center; gap:12px; margin-bottom:20px;">
-                <i class="fas fa-bullhorn" style="color:#38B2AC;"></i> 
-                <span data-key="news_title">Новости и события</span>
-            </h2>
-
-            <div style="background:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 4px 16px rgba(10,46,74,0.06); border-left:5px solid #38B2AC;">
-                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-                    <span style="font-size:13px; color:#5A6A7A;"><i class="fas fa-calendar-alt" style="color:#38B2AC;"></i> <span data-key="news_date">10 августа 2026</span></span>
-                    <span style="background:#0A2E4A; color:#fff; font-size:11px; padding:2px 12px; border-radius:12px; font-weight:600;" data-key="news_tag">Актуально</span>
-                </div>
-                <h3 style="font-size:20px; color:#0A2E4A; margin:8px 0 4px;" data-key="news_title_main">🚤 У нас появилась своя группа в Фэйсбук!</h3>
-                <p style="font-size:15px; color:#4A5A6A; margin:0;">
-                    <span data-key="news_desc_main">Теперь у нас есть своя группа в </span>
-                    <a href="https://www.facebook.com/groups/2171012990297411" target="_blank" style="color:#38B2AC; text-decoration:none; font-weight:600;">
-                        <span data-key="news_facebook">Фэйсбук</span>
-                    </a>
-                    <span data-key="news_desc_end">, присоединяйтесь, чтобы получать актуальную информацию о событиях и мероприятиях!</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FEATURES ===== -->
-    <section class="wave-section">
-        <div class="container">
-            <div class="features">
-                <div class="feature-card">
-                    <span class="icon"><i class="fas fa-ship"></i></span>
-                    <h3 data-key="feat_garages">Лодочные гаражи</h3>
-                    <p data-key="feat_garages_desc">Безопасное хранение для вашей лодки, мотора и снаряжения круглый год.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon"><i class="fas fa-fish"></i></span>
-                    <h3 data-key="feat_fishing">Рыболовный клуб</h3>
-                    <p data-key="feat_fishing_desc">Соревнования, выезды на природу и обмен опытом с единомышленниками.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon"><i class="fas fa-users"></i></span>
-                    <h3 data-key="feat_community">Сообщество</h3>
-                    <p data-key="feat_community_desc">Дружеская атмосфера, взаимопомощь и общие мероприятия для всех членов.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
-                    <h3 data-key="feat_location">Удобное расположение</h3>
-                    <p data-key="feat_location_desc">Близость к воде, лодочным спускам и живописным местам для отдыха.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SPLIT SECTION: О НАС ===== -->
-    <section>
-        <div class="container split-section">
-            <div class="split-image">
-                <div class="big-icon">⛵</div>
-                <h3 style="color:#fff; margin-top:12px;" data-key="split_title">История товарищества</h3>
-                <p style="color:#B0D4E0;" data-key="split_desc">Лодочный кооператив появился еще в советские времена и в настоящий момент насчитывает более 700 гаражей, что позволяет нам утверждать, что он является самым большим в Эстонии.</p>
-            </div>
-            <div class="split-text">
-                <h2><i class="fas fa-info-circle"></i> <span data-key="split_about_title">О нас</span></h2>
-                <p data-key="split_about_text">Мы создаём комфортные условия для хранения лодок и общения людей, увлечённых водным отдыхом. Наша цель — развивать культуру ответственного отношения к воде и природе.</p>
-                <a href="about.html" class="btn" data-key="split_about_btn">Подробнее →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SPLIT SECTION: РЫБОЛОВНЫЙ КЛУБ (reverse) ===== -->
-    <section style="background:#EBF5FB;">
-        <div class="container split-section reverse">
-            <div class="split-image" style="background:linear-gradient(135deg, #1A6A8A, #0A2E4A);">
-                <div class="big-icon">🎣</div>
-                <h3 style="color:#fff; margin-top:12px;" data-key="split_fishing_title">Рыболовный клуб</h3>
-                <p style="color:#B0D4E0;" data-key="split_fishing_desc">Соревнования, мастер-классы и совместные выезды на рыбалку.</p>
-            </div>
-            <div class="split-text">
-                <h2><i class="fas fa-fish"></i> <span data-key="split_fishing_about">Рыболовный клуб</span></h2>
-                <p data-key="split_fishing_text">Объединяем опытных рыболовов и новичков. Регулярно проводим соревнования, выезды на природу и обучающие семинары по рыбной ловле и сохранению водных ресурсов.</p>
-                <a href="fishing-club.html" class="btn" data-key="split_fishing_btn">Присоединиться →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== GALLERY PREVIEW ===== -->
-    <section style="padding-bottom: 60px;">
-        <div class="container" style="text-align:center;">
-            <h2 style="font-size:32px; color:#0A2E4A; margin-bottom:8px;"><i class="fas fa-images" style="color:#38B2AC;"></i> <span data-key="gallery_preview_title">Наши моменты</span></h2>
-            <p style="color:#5A6A7A; margin-bottom:20px;" data-key="gallery_preview_desc">Взгляд на жизнь нашего товарищества</p>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 700px; margin: 0 auto 28px;">
-                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
-                    <img src="img/2.jpg" alt="Фото 1" style="width:100%; height:100%; object-fit:cover; display:block;" />
-                </div>
-                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
-                    <img src="img/1.jpg" alt="Фото 2" style="width:100%; height:100%; object-fit:cover; display:block;" />
-                </div>
-                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
-                    <img src="img/3.jpg" alt="Фото 3" style="width:100%; height:100%; object-fit:cover; display:block;" />
-                </div>
-                <div style="overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px rgba(10, 46, 74, 0.08); aspect-ratio: 1 / 1;">
-                    <img src="img/4.jpg" alt="Фото 4" style="width:100%; height:100%; object-fit:cover; display:block;" />
-                </div>
-            </div>
-            <a href="gallery.html" class="btn" data-key="gallery_preview_btn">Смотреть галерею →</a>
-        </div>
-    </section>
-
+<main><section class="community-hero"><div class="container"><div><p class="community-kicker" data-growth="kicker">Кулгу · Нарва · Сообщество</p><h1 data-growth="title">Кулгу — место, которое нас объединяет</h1><p class="community-lead" data-growth="lead">Лодки, гаражи, рыбалка и жизнь у воды. Знакомьтесь с соседями, делитесь фотографиями, находите объявления и обсуждайте будущее Кулгу в нашей Facebook-группе.</p><div class="community-actions"><a class="btn" href="https://www.facebook.com/groups/2171012990297411" target="_blank" rel="noopener noreferrer" data-growth="join">Вступить в Facebook-группу</a><a class="community-secondary" href="board.html" data-growth="board">Посмотреть объявления</a></div><p class="community-note" data-growth="note">Для владельцев гаражей, рыбаков и всех, кому интересно Кулгу.</p></div><figure class="community-photo"><img src="https://kulgunarva.ee/img/2.jpg" alt="Кулгу — вид с воды" width="1040" height="780" fetchpriority="high"><figcaption data-growth="caption">Фотография из галереи Кулгу</figcaption></figure></div></section><section class="community-section" id="community"><div class="container"><h2 data-growth="why">Зачем присоединяться?</h2><p class="community-intro" data-growth="intro">У каждого есть что спросить, чем поделиться и кому помочь. Давайте соберём это в одном месте.</p><div class="community-cards"><article class="community-card"><span class="number">01</span><h3 data-growth="one">Объявления и полезные контакты</h3><p data-growth="oned">Продажа, аренда, лодки и снаряжение. Найдите нужное на доске объявлений или поделитесь своим предложением.</p><a href="board.html" data-growth="board">Посмотреть объявления</a></article><article class="community-card"><span class="number">02</span><h3 data-growth="two">Знакомства и обмен опытом</h3><p data-growth="twod">Спросите совета у соседей, расскажите о своей лодке или найдите людей с общими интересами.</p><a href="https://www.facebook.com/groups/2171012990297411" data-growth="discuss" rel="noopener noreferrer">Открыть обсуждения</a></article><article class="community-card"><span class="number">03</span><h3 data-growth="three">Фотографии и жизнь Кулгу</h3><p data-growth="threed">Делитесь любимыми видами, старыми снимками и идеями о том, как сделать наше место лучше.</p><a href="gallery.html" data-growth="photos">Смотреть галерею</a></article></div></div></section><section class="community-section community-invite"><div class="container"><div><h2 data-growth="start">Начните со знакомства</h2><p class="community-intro" data-growth="startd">После вступления расскажите, что связывает вас с Кулгу. Ваши истории помогут участникам узнать друг друга.</p><a class="btn" href="https://www.facebook.com/groups/2171012990297411" target="_blank" rel="noopener noreferrer" data-growth="join">Вступить в Facebook-группу</a></div><blockquote class="community-quote" data-growth="quote">«Всем привет! Я связан с Кулгу с … Люблю это место за … Буду рад познакомиться с соседями!»</blockquote></div></section><section class="community-section"><div class="container"><h2 data-growth="gallery">Кулгу глазами своих</h2><p data-growth="galleryd">Узнаваемые места, вода и воспоминания. Ещё больше снимков — в галерее, а ваши истории ждём в группе.</p><div class="community-gallery"><a href="gallery.html"><img src="https://kulgunarva.ee/img/1.jpg" alt="Кулгу: фотография 1 из галереи" loading="lazy" width="400" height="400"></a><a href="gallery.html"><img src="https://kulgunarva.ee/img/2.jpg" alt="Кулгу: фотография 2 из галереи" loading="lazy" width="400" height="400"></a><a href="gallery.html"><img src="https://kulgunarva.ee/img/3.jpg" alt="Кулгу: фотография 3 из галереи" loading="lazy" width="400" height="400"></a><a href="gallery.html"><img src="https://kulgunarva.ee/img/4.jpg" alt="Кулгу: фотография 4 из галереи" loading="lazy" width="400" height="400"></a></div><a class="community-secondary" href="gallery.html" data-growth="photos">Смотреть галерею</a></div></section><section class="community-section community-faq"><div class="container"><h2 data-growth="faq">Перед вступлением</h2><details><summary data-growth="q1">Можно вступить, если у меня нет гаража?</summary><p data-growth="a1">Да. Группа объединяет владельцев гаражей, рыбаков, любителей лодок и людей, которым интересно Кулгу.</p></details><details><summary data-growth="q2">Вступление в группу означает членство в товариществе?</summary><p data-growth="a2">Нет. Facebook-группа — место для общения. По вопросам членства в товариществе обращайтесь по контактам на сайте.</p></details><details><summary data-growth="q3">Где разместить объявление?</summary><p data-growth="a3">На сайте есть доска объявлений и форма добавления. Перед публикацией укажите актуальные сведения и способ связи.</p></details><div class="community-final"><h2 data-growth="final">Есть своя история о Кулгу?</h2><p data-growth="finald">Приходите в группу, покажите любимый снимок и пригласите знакомого, которому тоже близко это место.</p><a class="btn" href="https://www.facebook.com/groups/2171012990297411" target="_blank" rel="noopener noreferrer" data-growth="join">Вступить в Facebook-группу</a></div></div></section></main>
     <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
@@ -185,9 +66,9 @@
                 <div>
                     <h4 data-key="footer_nav">Навигация</h4>
                     <a href="index.html" data-key="nav_home">Главная</a>
-                    <a href="about.html" data-key="nav_about">О нас</a>
+                    <a href="index.html#community" data-key="nav_about">О нас</a>
                     <a href="gallery.html" data-key="nav_gallery">Галерея</a>
-                    <a href="projects.html" data-key="nav_projects">Проекты</a>
+                    
                 </div>
                 <div>
                     <h4 data-key="footer_association">Рыболовный клуб</h4>
@@ -195,9 +76,9 @@
                 </div>
                 <div>
                     <h4 data-key="footer_contact">Контакты</h4>
-                    <a href="#"><i class="fas fa-phone"></i> +372 5560 6683</a>
-                    <a href="#"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
-                    <a href="#"><i class="fas fa-map-pin"></i> Kulgusadama tee 3, Narva, Estonia</a>
+                    <a href="tel:+37255606683"><i class="fas fa-phone"></i> +372 5560 6683</a>
+                    <a href="mailto:kulgunarva@gmail.com"><i class="fas fa-envelope"></i> kulgunarva@gmail.com</a>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Kulgusadama%20tee%203%2C%20Narva"><i class="fas fa-map-pin"></i> Kulgusadama tee 3, Narva, Estonia</a>
                 </div>
             </div>
             <div class="copyright">
@@ -391,5 +272,5 @@
             });
         });
     </script>
-</body>
+<script src="community.js"></script></body>
 </html>
