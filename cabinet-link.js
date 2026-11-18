@@ -1,0 +1,1 @@
+(() => {const update=()=>{const lang=localStorage.getItem('preferredLanguage')||'ru';document.querySelectorAll('[data-cabinet-link]').forEach(a=>{a.textContent=({ru:'Личный кабинет',et:'Iseteenindus',en:'My account'})[lang]||'Личный кабинет';});};document.addEventListener('click',e=>{if(e.target.closest('[data-lang]'))setTimeout(update,0);});update();})();
